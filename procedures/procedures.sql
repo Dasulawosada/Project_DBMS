@@ -3,7 +3,7 @@ DELIMITER $$
 
 CREATE PROCEDURE sp_attendance_by_course(IN p_c_code VARCHAR(20))
 BEGIN
-    SELECT * FROM vw_attendance_summary 
+    SELECT * FROM vm_attendance_summary 
     WHERE c_code = p_c_code 
     ORDER BY reg_no;
 END$$
@@ -11,7 +11,7 @@ END$$
 
 CREATE PROCEDURE sp_attendance_by_student(IN p_reg_no VARCHAR(20))
 BEGIN
-    SELECT * FROM vw_attendance_summary 
+    SELECT * FROM vm_attendance_summary 
     WHERE reg_no = p_reg_no
     ORDER BY c_code;
 END$$
@@ -36,7 +36,7 @@ END$$
 
 CREATE PROCEDURE sp_batch_attendance()
 BEGIN
-    SELECT * FROM vw_attendance_summary 
+    SELECT * FROM vm_attendance_summary 
     ORDER BY c_code, reg_no;
 END$$
 
