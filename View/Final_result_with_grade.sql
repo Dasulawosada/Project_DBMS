@@ -30,3 +30,5 @@ SELECT
 FROM Mark m
 JOIN Student s ON s.reg_no = m.reg_no
 JOIN Course  c ON c.c_code  = m.c_code;
+
+/*SELECT * FROM vw_final_results;*/

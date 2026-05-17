@@ -7,6 +7,7 @@ BEGIN
     WHERE c_code = p_c_code 
     ORDER BY reg_no;
 END$$
+/*CALL sp_attendance_by_course('ICT1206');*/ **
 
 
 CREATE PROCEDURE sp_attendance_by_student(IN p_reg_no VARCHAR(20))
@@ -15,6 +16,7 @@ BEGIN
     WHERE reg_no = p_reg_no
     ORDER BY c_code;
 END$$
+/*CALL sp_attendance_by_student('TG/2024/2001');*/ **
 
 
 CREATE PROCEDURE sp_attendance_student_course(IN p_reg_no VARCHAR(20), IN p_c_code VARCHAR(20))
@@ -32,14 +34,14 @@ BEGIN
     WHERE reg_no = p_reg_no AND c_code = p_c_code 
     ORDER BY att_date;
 END$$
-
+/*CALL sp_attendance_student_course('TG/2024/2001', 'ICT1204');*/ **
 
 CREATE PROCEDURE sp_batch_attendance()
 BEGIN
     SELECT * FROM vm_attendance_summary 
     ORDER BY c_code, reg_no;
 END$$
-
+/*CALL sp_batch_attendance();*/ **
 
 CREATE PROCEDURE sp_ca_by_course(IN p_c_code VARCHAR(20))
 BEGIN
@@ -47,6 +49,7 @@ BEGIN
     WHERE c_code = p_c_code 
     ORDER BY reg_no;
 END$$
+/*CALL sp_ca_by_course('ICT1206');*/ **
 
 
 CREATE PROCEDURE sp_ca_by_student(IN p_reg_no VARCHAR(20))
@@ -54,6 +57,7 @@ BEGIN
     SELECT * FROM vw_ca_marks 
     WHERE reg_no = p_reg_no;
 END$$
+/*CALL sp_ca_by_student('TG/2024/2001');*/ **
 
 
 CREATE PROCEDURE sp_final_results_batch()
@@ -61,6 +65,7 @@ BEGIN
     SELECT * FROM vw_final_results 
     ORDER BY c_code, reg_no;
 END$$
+/*CALL sp_final_results_batch();*/ **
 
 CREATE PROCEDURE sp_final_result_student(IN p_reg_no VARCHAR(20))
 BEGIN
@@ -68,14 +73,14 @@ BEGIN
     WHERE reg_no = p_reg_no
     ORDER BY c_code;
 END$$
-
+/*CALL sp_final_result_student('TG/2024/2001');*/ **
 
 CREATE PROCEDURE sp_sgpa_all()
 BEGIN
     SELECT * FROM vw_sgpa 
     ORDER BY SGPA DESC;
 END$$
-
+/*CALL sp_sgpa_all();*/ **
 
 CREATE PROCEDURE sp_eligibility_batch()
 BEGIN
@@ -84,6 +89,7 @@ BEGIN
 END$$
 
 DELIMITER ;
+/*CALL sp_eligibility_batch();*/ **
 
 DELIMITER $$
 
@@ -114,3 +120,4 @@ END$$
 
 DELIMITER ;
 
+/*CALL sp_student_grade_final();*/

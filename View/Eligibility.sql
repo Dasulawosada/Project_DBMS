@@ -9,3 +9,5 @@ SELECT
     IF(att.eligibility = 'Eligible' AND ca.ca_status = 'CA Passed','Eligible for Final','Not Eligible for Final') AS final_eligibility
 FROM vm_attendance_summary att
 JOIN vw_ca_marks ca ON att.reg_no = ca.reg_no AND att.c_code = ca.c_code;
+
+/*SELECT * FROM vw_eligibility;*/

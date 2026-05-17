@@ -19,3 +19,6 @@ FROM Attendance a
 JOIN Student s ON s.reg_no = a.reg_no
 JOIN Course c ON c.c_code = a.c_code
 GROUP BY a.reg_no, a.c_code, a.session_type;
+
+
+/*SELECT * FROM vm_attendance_summary;*/

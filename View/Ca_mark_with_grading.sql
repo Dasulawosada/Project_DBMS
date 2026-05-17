@@ -17,3 +17,6 @@ SELECT
     END AS ca_status
 FROM Mark m
 JOIN Student s ON s.reg_no = m.reg_no;
+
+
+/*SELECT * FROM vw_ca_marks;*/

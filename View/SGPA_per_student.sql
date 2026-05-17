@@ -14,3 +14,4 @@ SELECT
 FROM vw_final_results fr
 WHERE fr.grade NOT IN ('WH','MC')
 GROUP BY fr.reg_no, fr.student_name;
+/*SELECT * FROM vw_sgpa;*/
